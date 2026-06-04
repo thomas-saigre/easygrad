@@ -1,0 +1,72 @@
+[project]
+site_name = "An introduction to automatic differenntiation"
+site_description = "Let's implement yourself an autograd engine!"
+site_author = "Samuel Vaiter"
+copyright = "Copyright &copy; 2026"
+repo_url = "https://github.com/svaiter/easygrad"
+repo_name = "svaiter/easygrad"
+
+extra_javascript = [
+    "javascripts/mathjax.js",
+    "https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js",
+]
+
+nav = [
+    { "Home" = "index.md" },
+    { "Primer" = [
+        { "Numerical differentiation" = "primer/numerical.md" },
+        { "Symbolic differentiation" = "primer/symbolic.md" },
+        { "Complex step" = "primer/complex-step.md" },
+    ] },
+    { "Scalar case" = [
+        { "Forward: dual numbers" = "scalar/forward-dual.md" },
+        { "Reverse: a scalar tape" = "scalar/reverse-tape.md" },
+    ] },
+    { "Vector case" = [
+        { "Reverse mode over arrays" = "vector/reverse.md" },
+        { "Forward mode over arrays" = "vector/forward.md" },
+    ] },
+    { "Let's train an MLP" = "train-mlp.md" },
+    { "Conclusion" = "conclusion.md" },
+]
+
+[project.theme]
+features = [
+    "content.code.copy",
+    "navigation.sections",
+    "navigation.top",
+    "navigation.footer",
+    "toc.follow",
+]
+
+[[project.theme.palette]]
+scheme = "default"
+toggle.icon = "lucide/sun"
+toggle.name = "Switch to dark mode"
+
+[[project.theme.palette]]
+scheme = "slate"
+toggle.icon = "lucide/moon"
+toggle.name = "Switch to light mode"
+
+[project.markdown_extensions.admonition]
+[project.markdown_extensions.attr_list]
+[project.markdown_extensions.def_list]
+[project.markdown_extensions.footnotes]
+[project.markdown_extensions.md_in_html]
+[project.markdown_extensions.toc]
+permalink = true
+[project.markdown_extensions.pymdownx.arithmatex]
+generic = true
+[project.markdown_extensions.pymdownx.details]
+[project.markdown_extensions.pymdownx.highlight]
+anchor_linenums = true
+line_spans = "__span"
+pygments_lang_class = true
+[project.markdown_extensions.pymdownx.inlinehilite]
+[project.markdown_extensions.pymdownx.superfences]
+custom_fences = [
+    { name = "mermaid", class = "mermaid", format = "pymdownx.superfences.fence_code_format" },
+]
+[project.markdown_extensions.pymdownx.tabbed]
+alternate_style = true
