@@ -22,6 +22,17 @@ def swell_demo(max_iter: int = 5) -> list[tuple[int, int]]:
 
     Returns a list of ``(n, node_count)`` pairs.
     """
-    raise NotImplementedError(
-        "Exercise: implement swell_demo (docs/primer/symbolic.md)"
-    )
+    counts: list[tuple[int, int]] = []
+    x = sp.Symbol("x")
+    r = sp.Symbol("r")
+
+    # Start with the identity (0 iterations) and then compose the logistic
+    # map repeatedly. For each composition compute the derivative with
+    # `sp.diff`, expand it and measure its size.
+    expression = x
+    for order in range(max_iter + 1):
+        deriv = sp.diff(expression, x)
+        size = expression_size(sp.expand(deriv))
+        counts.append((order, size))
+        expression = logistic_map(expression, r)
+    return counts
