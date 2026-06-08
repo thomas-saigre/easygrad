@@ -1,4 +1,4 @@
-"""easygrad: a teaching implementation of automatic differentiation. """
+"""easygrad: a teaching implementation of automatic differentiation."""
 
 from . import (
     dual,
@@ -7,7 +7,6 @@ from . import (
     reverse,
     scalar_reverse,
     symbolic,
-    tracing,
     train,
 )
 
@@ -18,7 +17,6 @@ __all__ = [
     "scalar_reverse",
     "reverse",
     "forward",
-    "tracing",
     "train",
 ]
 
